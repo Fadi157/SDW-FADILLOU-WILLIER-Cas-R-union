@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourisme -La Réunion</title>
+    <title>Tourisme - La Réunion</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="search-form">
-            <input type="text" id="searchInput" placeholder="Rechercher...">
-            <div class="filter-types">
-                <label><input type="checkbox" value="circuits" checked> Circuits</label>
-                <label><input type="checkbox" value="lieux" checked> Lieux</label>
-                <label><input type="checkbox" value="musees" checked> Musées</label>
+    <header>
+        <div class="banniere">
+            <img src="images/reunion-banner.jpg" alt="la reunion">
+            <div class="recherche-filtres">
+                <div class="recherche-container">
+                    <input type="text" id="barreRecherche" placeholder="Rechercher un lieu...">
+                </div>
+                <div class="groupe-filtres">
+                    <label class="filtre-item">
+                        <input type="checkbox" id="musees" checked>
+                        <span class="marqueur-couleur musee"></span>
+                        Musées
+                    </label>
+                    <label class="filtre-item">
+                        <input type="checkbox" id="circuits" checked>
+                        <span class="marqueur-couleur circuit"></span>
+                        Circuits
+                    </label>
+                    <label class="filtre-item">
+                        <input type="checkbox" id="lieux" checked>
+                        <span class="marqueur-couleur lieu"></span>
+                        Lieux remarquables
+                    </label>
+                </div>
             </div>
         </div>
+    </header>
+    <div class="container">
+        <aside class="liste-bloc">
+            <div class="liste-lieux" id="listeLieux"></div>
+        </aside>
+        <main id="carte"></main>
     </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

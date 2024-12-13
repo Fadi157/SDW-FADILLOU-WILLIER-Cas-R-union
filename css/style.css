@@ -1,0 +1,207 @@
+:root {
+    --couleur-musee: #4CAF50;
+    --couleur-circuit: #FF5722;
+    --couleur-lieu: #2196F3;
+    --couleur-fond: #f8f9fa;
+    --couleur-texte: #333;
+    --ombre-legere: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--couleur-texte);
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 200px; 
+    overflow: hidden;
+}
+
+.banniere {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banniere img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7); 
+}
+
+.recherche-filtres {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.recherche-container {
+    margin-bottom: 15px;
+}
+
+#barreRecherche {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+#barreRecherche:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.groupe-filtres {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.filtre-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.filtre-item:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.marqueur-couleur {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 170px);
+    margin-top: 30px;
+}
+
+
+
+.liste-bloc {
+    width: 350px;
+    background: var(--couleur-fond);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--ombre-legere);
+}
+
+.filtres {
+    margin-bottom: 25px;
+}
+
+.groupe-filtres {
+    margin-top: 20px;
+}
+
+.filtre-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.filtre-item:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.marqueur-couleur {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.musee { background: var(--couleur-musee); }
+.circuit { background: var(--couleur-circuit); }
+.lieu { background: var(--couleur-lieu); }
+
+.liste-lieux {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.lieu-item {
+    padding: 15px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.lieu-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--ombre-legere);
+}
+
+.lieu-item.musee { border-left-color: var(--couleur-musee); }
+.lieu-item.circuit { border-left-color: var(--couleur-circuit); }
+.lieu-item.lieu { border-left-color: var(--couleur-lieu); }
+
+.lieu-nom {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.lieu-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+#carte {
+    flex: 1;
+}
+
+.popup-contenu {
+    padding: 15px;
+    max-width: 300px;
+}
+
+.popup-titre {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+}
+
+.popup-info {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
